@@ -1,0 +1,24 @@
+*{ /*universal selector*/
+    font-family: monospace;
+    /*border: 1px solid red;*/
+}
+body{
+    font-size: 22px;
+    /*border: 1px solid red;*/
+}
+h1,h2,h3{ /*multiple selector*/
+    color:red ;
+}
+p{
+    color: blue;
+}
+.highlight{ /* .className selector */
+    text-transform: uppercase;
+    background-color: greenyellow;
+}
+.gray{
+    color: gray;
+}
+#second{ /* #id selector */
+    font-style: italic;
+}
