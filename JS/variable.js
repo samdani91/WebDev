@@ -2,7 +2,7 @@
 
 var myName = "Samdani"; //whole program
 let nickName = "Oni";//within scope
-const pi = 3.14;
+const PI = 3.14; //read only; but we can mutate const array
 
 var a, b;
 a = 2;
@@ -59,3 +59,24 @@ console.log(str+'\n'+str2+'\n'+str3);
 
 */
 
+//var vs let
+//using var we can create duplicate name variables but not let
+var cat = "Tom";
+var cat = "Pussy Cat";
+
+let mouse = "Jerry";
+// let mouse = "abcd";
+
+function checkScope(){
+    // var i = "function scope";
+    // let i = "function scope";
+    if(true){
+        // i="block scope";
+        // let i="block scope";
+        var i="block scope";
+        console.log("Block Scope i is: ",i);
+    }
+    console.log("Function Scope i is: ",i);
+}
+
+checkScope();
