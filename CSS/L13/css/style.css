@@ -58,3 +58,59 @@ body{
     background-color: purple;
     position: relative;
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
+section{
+    height: 100vh;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: green;
+}
+
+header,footer{
+    color: #fff;
+    height: 100px;
+    text-align: center;
+    
+}
+
+header{
+    position: sticky;
+    top: 0;
+    font-size: 5rem;
+}
+
+footer{
+    position: sticky;
+    width: 100%;
+    background-color: black;
+    bottom: 0;
+    font-size: 3rem;
+}
+
+a:visited{
+    color: white;
+}
+
+.social{
+    background-color: royalblue;
+    color: white;
+    font-size: inherit;
+    position: fixed;
+    padding:1rem ;
+    top: 30%;
+    left: 0;
+    z-index: 1;
+}
