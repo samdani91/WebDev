@@ -9,10 +9,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.post('/RegForm', (req, res) => {
+app.post('/RegForm', async (req, res) => {
     const { name, mobile, email, password } = req.body;
 
-    isExist(mobile, (err, exists) => {
+    isExist(mobile, null, (err, exists) => {
         if (err) {
             console.error('Database error:', err);
             return res.status(500).json({ error: err.message });
@@ -33,6 +33,23 @@ app.post('/RegForm', (req, res) => {
 
             return res.status(200).json({ message: 'Registration Successful', data });
         });
+    });
+});
+
+app.post('/LoginForm', async (req, res) => {
+    const { email, password } = req.body;
+
+    isExist(email,password, (err, exists) => {
+        if (err) {
+            console.error('Database error:', err);
+            return res.status(500).json({ error: err.message });
+        }
+
+        if (exists) {
+            return res.status(200).json({ message: 'Log In Successful' });
+        }else{
+            return res.status(400).json({ message: 'Credentials Mismatched!!!'});
+        }
     });
 });
 
