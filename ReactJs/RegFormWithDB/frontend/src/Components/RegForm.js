@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
+
 
 function RegForm(){
     const [values,setValues] = useState({
@@ -37,6 +39,12 @@ function RegForm(){
     };
     
      return (
+        <>
+        <header>
+          <h1 className='heading'>
+            Registration Form
+          </h1>
+        </header>
         <form onSubmit={handleSubmit}>
             <div className="form" >
 
@@ -49,6 +57,9 @@ function RegForm(){
 
             </div>
         </form>
+        <p className="msg">Already Registered?</p>
+        <Link to="/login" className="login-msg">Log In</Link>
+        </>
      )
 }
 
