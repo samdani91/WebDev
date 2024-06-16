@@ -1,17 +1,20 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import RegForm from './Components/RegForm';
+import LoginForm from './Components/LoginForm';
 
 function App() {
   return (
-    <div>
-      <header>
-        <h1 className='heading'>
-          Registration Form
-        </h1>
-      </header>
-     <RegForm />
-     <p className="msg">Already Registered?</p>
-     <a href="#" className="login-msg">Log In</a>
-    </div>
+    <Router>
+      <div>
+        
+        <Routes>
+          <Route exact path="/" element={<RegForm />} />
+          <Route path="/login" element={<LoginForm />} />
+        </Routes>
+        
+      </div>
+    </Router>
   );
 }
 
