@@ -72,6 +72,7 @@ body{
     text-align: center;
 }
 .btn{
+    cursor: pointer;
     margin-top: 10px;
     display: inline-block;
     padding: 12px 28px;
