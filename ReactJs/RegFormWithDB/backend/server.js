@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('./db');
+const path = require('path');
 const isExist = require('./checkExist');
 
 const port = 8081;
@@ -8,6 +9,14 @@ const port = 8081;
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Serve static files from the 'build' directory
+app.use(express.static(path.join('/home/samdani1412/Desktop/WebDev/ReactJs/RegFormWithDB/frontend/build')));
+
+// For all GET requests, send back index.html so that React Router can handle routing
+app.get('*', (req, res) => {
+    res.sendFile(path.join('/home/samdani1412/Desktop/WebDev/ReactJs/RegFormWithDB/frontend/build', 'index.html'));
+});
 
 app.post('/RegForm', async (req, res) => {
     const { name, mobile, email, password } = req.body;
