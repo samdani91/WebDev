@@ -70,7 +70,7 @@ export default function TextForm(props) {
                 <p className='fs-5 mb-0'>{wordCount} words and {text.length} characters</p>
                 <p className='fs-5'>Read Time: {0.008 * wordCount} mins</p>
                 <h2>Preview</h2>
-                <p>{text}</p>
+                <p>{text.length>0?text:"Enter some text in the text box to preview it here."}</p>
             </div>
 
         </div>

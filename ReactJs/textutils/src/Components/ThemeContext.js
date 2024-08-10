@@ -11,7 +11,7 @@ export const ThemeProvider = ({ children }) => {
 
     const myStyle = {
         color: isDarkMode ? 'white' : 'black',
-        backgroundColor: isDarkMode ? 'black' : '#EAECEE'
+        backgroundColor: isDarkMode ? '#042743' : '#EAECEE'
     };
 
     return (
