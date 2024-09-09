@@ -93,6 +93,19 @@ body{
     0 0 10px cyan, 0 0 10px cyan,
     0 0 10px cyan,0 0 10px cyan;
 }
+.password-container {
+    position: relative;
+}
+
+.password-toggle{
+    position: absolute;
+    background: transparent;
+    color: #0ef;
+    border: none;
+    top: 40%;
+    cursor: pointer;
+}
+
 @media screen and (min-width: 320px){
     .heading{
         font-size: 1.2rem;

@@ -31,7 +31,7 @@ app.post('/RegForm', async (req, res) => {
             return res.status(400).json({ message: 'User Already Exists !!!' });
         }
 
-        const sql = 'INSERT INTO INFORMATION (fname, mobile, email, passwords) VALUES (?, ?, ?, ?)';
+        const sql = 'INSERT INTO INFORMATION (Name, Mobile, Email, Passwords) VALUES (?, ?, ?, ?)';
         const values = [name, mobile, email, password];
 
         db.query(sql, values, (err, data) => {

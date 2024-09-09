@@ -7,9 +7,9 @@ function isEmail(value) {
 
 function isExist(value, password, callback) {
     let sql =
-        "SELECT EXISTS(SELECT 1 FROM INFORMATION WHERE mobile = ?) AS exist";
+        "SELECT EXISTS(SELECT 1 FROM INFORMATION WHERE Mobile = ?) AS exist";
     if (isEmail(value)) {
-        sql = "SELECT EXISTS(SELECT 1 FROM INFORMATION WHERE email = ?) AS exist";
+        sql = "SELECT EXISTS(SELECT 1 FROM INFORMATION WHERE Email = ?) AS exist";
     }
     db.query(sql, [value], (err, results) => {
         if (err) {
@@ -18,7 +18,7 @@ function isExist(value, password, callback) {
 
         if (password != null) {
             sql =
-                "SELECT EXISTS(SELECT 1 FROM INFORMATION WHERE passwords = ?) AS exist";
+                "SELECT EXISTS(SELECT 1 FROM INFORMATION WHERE Passwords = ?) AS exist";
             db.query(sql, [password], (err2, results2) => {
                 if (err2) {
                     return callback(err2, null);

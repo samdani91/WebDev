@@ -1,15 +1,19 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // FontAwesome icons for eye visibility
 
 function LoginForm(){
     const [values,setValues] = useState({
         email:'',
         password: ''
     })
+    const [showPassword, setShowPassword] = useState(false);
     const handleChange = (event) =>{
         setValues({...values,[event.target.name]:[event.target.value]})
     }
+    const handlePasswordToggle = () => {
+        setShowPassword(prevState => !prevState);
+    };
     const handleSubmit = (event) => {
         event.preventDefault();
         
@@ -43,8 +47,25 @@ function LoginForm(){
         <form onSubmit={handleSubmit}>
             <div className="form" >
                 
-                <input type="text" className="entry" placeholder="Enter Your Email" name="email" onChange={handleChange}/>
-                <input type="text" className="entry" placeholder="Enter password" name="password" onChange={handleChange}/>
+                <input type="text" className="entry" placeholder="Enter Your Email" name="email" onChange={handleChange} required/>
+                <div className="password-container">
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            className="entry"
+                            placeholder="Enter Password"
+                            name="password"
+                            value={values.password}
+                            onChange={handleChange}
+                            required
+                        />
+                        <button
+                            type="button"
+                            className="password-toggle"
+                            onClick={handlePasswordToggle}
+                        >
+                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                        </button>
+                    </div>
 
                 <button type="submit" className="btn">Log In</button>
 
