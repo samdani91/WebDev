@@ -10,6 +10,7 @@ import HoverCounter from './Components/HoverCounter'
 import ClickCounter2 from './Components/ClickCounter2'
 import HoverCounter2 from './Components/HoverCounter2'
 import Counter from './Components/Counter'
+import Section from './Components/Section';
 
 function App() {
     // console.log('App component rendered')
@@ -37,12 +38,16 @@ function App() {
             {/* <ClickCounter2/>
             <HoverCounter2/> */}
             
-            <Counter render={(count,incrementCount)=>(
+            {/* <Counter render={(count,incrementCount)=>(
                 <ClickCounter2 count={count} incrementCount={incrementCount}/>
             )}/>
             <Counter render={(count,incrementCount)=>(
                 <HoverCounter2 count={count} incrementCount={incrementCount}/>
-            )}/>
+            )}/> */}
+
+            
+
+            <Section/>
 
 
         </div>
